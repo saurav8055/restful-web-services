@@ -1,6 +1,8 @@
 package com.example.restful_web_services.user;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -17,7 +19,7 @@ public class UserResource {
         this.service = service;
     }
 
-    @GetMapping("/users")
+    @GetMapping(value = "/users", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<User> retrieveAllUsers(){
         return service.findAll();
     }

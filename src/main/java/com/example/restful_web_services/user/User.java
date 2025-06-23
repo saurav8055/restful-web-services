@@ -2,9 +2,11 @@ package com.example.restful_web_services.user;
 
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.time.LocalDate;
 
+@XmlRootElement
 public class User {
     private Integer id;
 
